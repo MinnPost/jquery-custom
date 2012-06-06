@@ -1,14 +1,21 @@
-# jQueryCustom
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Testing jQueryCustom</title>
+  
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="orig-jquery"></div>
+  <div class="custom-jquery"></div>
 
-Customized jQuery versions that namespace jQuery as jQueryCustom.  Good for including in places where jQuery is already there and not in noConflict mode.
-
-## Usage
-
-```
-  <!-- Original version of jQuery -->
+  <!-- Include an older version of jQuery -->
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   
-  <!-- jQueryCustom and noConflict mode -->
+  <!-- Include a version of jQueryCustom -->
   <script src="./jquery-1.7.2.custom.min.js"></script>
   <script type="text/javascript">jQueryCustom.noConflict();</script>
   
@@ -17,9 +24,10 @@ Customized jQuery versions that namespace jQuery as jQueryCustom.  Good for incl
     // Original jQuery
     $('.orig-jquery').html('Orig jQuery version: ' + $.fn.jquery);
   
-    // jQueryCustom
+    // Custom jquery
     (function($, window, undefined) {
       $('.custom-jquery').html('Custom jQuery version: ' + $.fn.jquery);
     })(jQueryCustom, window)
   </script>
-```
+</body>
+</html>
